@@ -1,0 +1,28 @@
+cabal-version:      2.2
+name:               ForestGame
+version:            0.1.0.0
+synopsis:           A cool CLI game
+license:            MIT
+license-file:       LICENSE
+author:             Diego Matos
+maintainer:         diego.matos@iohk.io
+category:           Game
+extra-source-files: CHANGELOG.md
+
+common pragmas
+    ghc-options: -Wall -XNumericUnderscores
+
+executable ForestGame
+    import:           pragmas
+    main-is:          Main.hs
+    other-modules:    Forest.Level1
+                     ,Forest.Level2 
+                     ,User.Actions.Move
+                     ,User.Actions.Battle
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.16.4.0
+                     ,random
+                     ,process ^>=1.6.16.0
+    hs-source-dirs:   app, src
+    default-language: Haskell2010
